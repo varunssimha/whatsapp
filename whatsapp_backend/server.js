@@ -3,7 +3,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import Messages from "./dbMessages.js";
-
+import Pusher from "pusher";
 // GtplqJwECjEwWUS7
 
 // app config
@@ -11,6 +11,14 @@ import Messages from "./dbMessages.js";
 const app = express();
 
 const port = process.env.PORT || 9000;
+
+const pusher = new Pusher({
+  appId: "1330346",
+  key: "68347bddeb42bc38885b",
+  secret: "a8fe8e717f2d5d8b42b5",
+  cluster: "ap2",
+  useTLS: true,
+});
 
 const connection_url =
   "mongodb+srv://admin:GtplqJwECjEwWUS7@cluster0.effmj.mongodb.net/whatsappdb?retryWrites=true&w=majority";
